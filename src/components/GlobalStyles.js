@@ -191,17 +191,6 @@ export const GlobalStyles = () => (
                 top: calc(100% - 24rem);
                 animation: float 6s linear infinite;
             }
-                
-            // &:before {
-            //  content: '';
-            //  position: absolute;
-            //  top: 0;
-            //  left: 0;
-            //  width: 100%;
-            //  height: 100%;
-            //  background-repeat: no-repeat;
-            //  background-image: url('https://icon-library.com/images/pokemon-pokeball-icon/pokemon-pokeball-icon-26.jpg');
-            // }
         }
         
         .select-pokemon-wrapper {
@@ -434,6 +423,8 @@ export const GlobalStyles = () => (
             .default-section {
                 &.type-no-bottom {
                     padding: 80px 0 0;
+                    min-height: 95vh;
+                    overflow: hidden;
                 }
             }
         

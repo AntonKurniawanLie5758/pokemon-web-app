@@ -16,9 +16,13 @@ function MyPokemonList() {
     const db = new Localbase('tkpd-pokemon-db');
     const [loading, setLoading] = useState(false);
     const [data, setData] = useState();
+    const [lenght,setLength] = useState();
 
     function loadData() {
         db.collection('my_data').get({ keys: true }).then(data => {
+            if(data.length === 0) {
+                setLength(0);
+            }
             setData(data);
         })
     }
@@ -27,7 +31,6 @@ function MyPokemonList() {
         setLoading(true);
         loadData();
         setLoading(false);
-
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
@@ -37,15 +40,18 @@ function MyPokemonList() {
         <>
             <Container>
                     {loading
-                        ? <Loading/>
+                        ? <div css={LoadingWrapper}><Loading/></div>
                         : data === undefined
-                            ? <Loading/>
-                            : <div css={PokemonListWrapper}>
-                                {data.map((result,i) => {
-                                    return <CardPokemon data={result} key={i}  id={data[i].key} />
-                                    })
-                                }
-                            </div>
+                            ? <div css={LoadingWrapper}><Loading/></div>
+                            : lenght === 0
+                                ? <div css={TextWrapper} className={"d-flex justify-content-center align-items-center h-80 fade-in-text"}><h5
+                                    className={"text-center text-mobile"}>No Pokemon Founded</h5></div>
+                                :<div css={PokemonListWrapper}>
+                                    {data.map((result,i) => {
+                                        return <CardPokemon data={result} key={i}  id={data[i].key} />
+                                        })
+                                    }
+                                </div>
                     }
             </Container>
         </>
@@ -54,7 +60,6 @@ function MyPokemonList() {
 
 function CardPokemon(props) {
     const data = props.data.data;
-
     return (
         <a href={"/pokemon-detail/" + data.id+ "/" + data.species} css={PokemonCard}>
             <div css={PokemonCardImage}>
@@ -115,6 +120,22 @@ const PokemonName = css`
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 `;
+
+const LoadingWrapper = css `
+    padding-top: 18%;
+
+    ${mq[0]} {
+        padding-top: 60%;
+    }
+`
+
+const TextWrapper = css `
+    padding-top: 14rem;
+
+    ${mq[0]} {
+        padding-top: unset;
+    }
+`
 
 
 export default MyPokemonList;

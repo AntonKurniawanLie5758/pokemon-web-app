@@ -26,7 +26,7 @@ export function PokemonDetail(props) {
     return (
         <>
             {data === undefined
-                ? <Loading/>
+                ? <div css={LoadingWrapper}><Loading/></div>
                 : <PokemonCard data={data} handleChildData={props.handleChildData}/>
             }
         </>
@@ -588,4 +588,12 @@ const RenameText = css`
    font-size: 18px;
    font-weight: bold;
    padding-bottom: 20px; 
+`
+
+const LoadingWrapper = css `
+    padding-top: 18%;
+    
+    ${mq[0]} {
+        padding-top: 60%;
+    }
 `

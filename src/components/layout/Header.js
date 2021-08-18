@@ -3,6 +3,7 @@ import React from "react";
 import {css} from '@emotion/react'
 import PokedexIcon from "../../assets/images/pokedex.jpeg";
 import BackpackIcon from "../../assets/images/backpack.png";
+import Logo from "../../assets/images/logo-pokemon.png";
 import {useHistory, useLocation} from 'react-router-dom';
 import {Image} from "react-bootstrap";
 
@@ -25,7 +26,7 @@ export function Header() {
             <div css={HeaderWrapper}>
                 <a href={"#"} onClick={handleBack}>
                     <Image
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png"
+                        src={Logo}
                         css={logo} alt={"logo-icon"}/>
                 </a>
                 <div css={MenuWrapper}>
