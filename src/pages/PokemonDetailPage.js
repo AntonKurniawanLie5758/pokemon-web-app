@@ -201,7 +201,7 @@ function PokemonDetailPage() {
                                     Cancel
                                 </Button>
                                 <Button variant="primary" onClick={handleRename}>
-                                    Save Changes
+                                    Save
                                 </Button>
                             </div>
                         </Modal.Body>
@@ -557,7 +557,6 @@ const ButtonModalWrapper = css`
     }
     
     ${mq[0]} {
-        flex-direction: column;
         justify-content: center;
         
         button {
