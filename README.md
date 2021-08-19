@@ -15,6 +15,7 @@ Please Visit Web : https://pokemon-app-f443e.web.app
 - [Apollo GraphQL](https://www.apollographql.com/)
 - [IndexedDB](https://www.npmjs.com/package/localbase)
 - [Firebase Hosting](https://firebase.google.com/docs/hosting)
+- [PWA](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
 
 
 Pokemon Web App is also using [graphql-pokeapi](https://github.com/mazipan/graphql-pokeapi) for providing the Pokemons data.

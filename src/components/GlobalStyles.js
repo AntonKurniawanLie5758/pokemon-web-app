@@ -16,6 +16,7 @@ export const GlobalStyles = () => (
         body {
            background: rgb(255,255,255);
            background: linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(231,238,250,1) 40%, rgba(227,235,249,1) 60%, rgba(223,232,247,1) 100%);
+           overflow: hidden;
         }
         
         * {
@@ -423,8 +424,7 @@ export const GlobalStyles = () => (
             .default-section {
                 &.type-no-bottom {
                     padding: 80px 0 0;
-                    min-height: 95vh;
-                    overflow: hidden;
+                    min-height: calc(95vh - 1.5rem);
                 }
             }
         
@@ -437,7 +437,7 @@ export const GlobalStyles = () => (
             }
             
             .pokemon-list-wrapper {
-                bottom: 5rem;
+                bottom: 6.5rem;
                 position:absolute;
                 width: 100%;
                 left: unset;

@@ -12,12 +12,13 @@ const mq = breakpoints.map(
     bp => `@media (max-width: ${bp}px)`
 )
 
+
 export function PokemonContainer(props) {
      const {data: {pokemons = []} = {}} = useQuery(GET_POKEMONS, {
          variables: {
              limit: props.limit,
              offset: 0,
-         }
+         },
      });
 
     const buttonLimit = () => {
